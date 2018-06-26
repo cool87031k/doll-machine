@@ -1,0 +1,562 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", "Apple LiGothic Medium", Roboto, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #fff;
+        }
+
+        a {
+            color: #2d2d2d;
+            text-decoration: none;
+            border-bottom: 1px solid #c71b0a;
+        }
+
+        header,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            header {
+                width: 678px;
+            }
+
+            article,
+            article>header {
+                max-width: 678px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            header {
+                width: 900px;
+            }
+
+            article,
+            article>header {
+                max-width: 900px;
+                margin: 0 auto;
+            }
+        }
+
+        header>table {
+            width: 100%;
+        }
+
+        article>header>span {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2.25;
+        }
+
+        article>header>h1 {
+            margin-top: 11px;
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.32;
+        }
+
+        article {
+            color: #2d2d2d;
+        }
+
+        article>figure {
+            margin: 40px 0 0 0;
+        }
+
+
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>figure {
+                width: 678px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: left;
+                width: 500px;
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>figure {
+                width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .float-right {
+                float: right;
+                width: 360px;
+                margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: 50px;
+            }
+        }
+
+        article>p,
+        article>h2,
+        article>blockquote,
+        article>ul,
+        article figcaption,
+        article>div,
+        article>header {
+            max-width: calc(270/320*100%);
+            margin: 0 auto;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header,
+            article>ul {
+                width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            article>p,
+            article>h2,
+            article>blockquote,
+            article>ul,
+            article figcaption,
+            article>div,
+            article>header {
+                max-width: 756px;
+            }
+            article>ul {
+                width: 700px;
+            }
+        }
+
+        article>ul {
+            width: 100%;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        article video,
+        article audio {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        article>p,
+        article>blockquote {
+            font-size: 18px;
+            line-height: 2.0;
+            letter-spacing: 0.9px;
+            margin-top: 40px;
+        }
+
+        article>blockquote {
+            padding-left: 21px;
+            color: #6d6d6d;
+            border-left: 1px solid #6d6d6d;
+        }
+
+        article>h2 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1.1px;
+            line-height: 1.64;
+            margin-top: 40px;
+        }
+
+        article figcaption {
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #6d6d6d;
+            margin-top: 15px;
+        }
+
+        .header {
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 25px;
+            background-color: #e1e1e1;
+        }
+
+        .menu {
+            width: 22px;
+            height: 22px;
+            background-color: #e1e1e1;
+        }
+
+        .author {
+            margin-right: 30px;
+            font-size: 15px;
+            line-height: 2.25;
+        }
+
+        .introduction {
+            font-size: 22px;
+            line-height: 1.82;
+            letter-spacing: 1.6px;
+            text-align: justify;
+            margin-top: 30px;
+        }
+
+        .related-text {
+            font-size: 16px;
+            line-height: 2.25;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .related-items {
+            margin-bottom: 60px;
+        }
+
+        .related-item {
+            background-color: #e1e1e1;
+            margin-top: 20px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .related-item>img {
+            width: 20%;
+            vertical-align: middle;
+        }
+
+        .related-item>div {
+            display: inline-block;
+            width: 70%;
+            padding-left: 20px;
+            vertical-align: middle;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #bfbfbf;
+            min-height: 300px;
+        }
+
+        footer>table {
+            border-spacing: 45px;
+            width: 100%;
+        }
+
+        .footer-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #777;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            font-size: 18px;
+            text-align: center;
+            color: #777;
+        }
+
+        .embed-box {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .embed-box>iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        @media screen and (max-width: 767px) {
+            table.hidden-on-mobile {
+                display: none;
+            }
+
+            table.shown-on-mobile {
+                display: table;
+            }
+        }
+
+
+        @media screen and (min-width: 768px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+
+
+        }
+
+        @media screen and (min-width: 500px) {
+            table.hidden-on-mobile {
+                display: table;
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            table.shown-on-mobile {
+                display: none;
+            }
+            .position-relative-top-left {
+                position: absolute;
+
+                top: 20%;
+                left: 35%;
+            }
+
+
+            .position-relative-top {
+                position: relative;
+                top: 0px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="logo"></div>
+                    </td>
+                    <td style="width:22px;">
+                        <div class="menu"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
+    <article>
+        <figure class="position-relative-top">
+            <img src="123-01.jpg" alt="img1-01 image of this article" width="100%" />
+        </figure>
+
+        <div class="position-relative-top-left">
+            <span>xxx產業?</span>
+            <h1>夾娃娃機店的今生未來</h1>
+            <h1>是突圍還是泡沫？</h1>
+            <div style="margin-bottom:10px">
+                <span class="author">圖、文／
+                    <b>
+                        <a href="https://www.facebook.com/profile.php?id=100001344265700" target="_blank">張玟榕</a>、
+                    </b>
+                    <b>
+                        <a href="https://www.facebook.com/profile.php?id=100000782258940" target="_blank">李昶毅</a>、
+                    </b>
+                    <b>
+                        <a href="https://www.facebook.com/profile.php?id=100002617298606" target="_blank">毛凱恩</a>、
+                    </b>
+                    <b>
+                        <a href="https://www.facebook.com/profile.php?id=100002640666293" target="_blank">陳棟</a>
+                    </b>
+
+                </span>
+
+            </div>
+        </div>
+
+
+
+        <p class="introduction"> 夾娃娃機店近期攻占多數精華地段，密集展店下迅速改變台灣街景，光是一中街短短50公尺就出現5家之多。究竟是多強大的誘因，讓這麼多人甘願冒著市場飽和的風險，紛紛投入這個產業？在迅速擴張的情形下，夾娃娃機店又具備怎樣的優勢，能避免成為下一個葡式蛋塔？
+        </p>
+        <p>根據財政部統計資料顯示，民國102年全台僅有60間夾娃娃機店，106年時大幅增長至2859家，數量比起前一年成長三倍。中華民國自動販賣商業同業公會全國聯合會創會理事長魏文彬推估，大大小小的夾娃娃機店實際數目應遠高於政府的統計數字，全國可能已達到8000至10000家，實際產業規模更為龐大。
+        </p>
+        <p>同時夾娃娃機店銷售額也大幅成長，從每間每月的平均銷售額表可知，近兩年來夾娃娃業在快速擴張下，收入並沒有被稀釋，大致呈現成長的趨勢。
+        </p>
+        <figure>
+            <img src="img3-sale.jpg" alt="img3-sale image of this article" width="100%" />
+        </figure>
+
+        <h2>夾娃娃機的營運模式</h2>
+        <p>
+            目前市面常見的夾娃娃機店，其實是由「台主」與「場主」兩種角色共同經營。場主選定營業地址後，負責裝潢、水電、購買機台等成本，並制定該店營業規範，將娃娃機台分租給多位台主，收取租金便是主要的獲利來源。台主負責經營機台，準備擺放於娃娃機內的貨品，以及調整夾取設定，顧客玩娃娃機投入的硬幣則全為台主的營收。
+        </p>
+        <figure>
+            <img src="IMG_9544.jpg" alt="夾娃娃機e" width="100%" />
+            <figcaption> 分租的方式大幅降低投資門檻，讓小資族爭相投入。圖／陳棟攝</figcaption>
+        </figure>
+        <p>
+            台主「罵丸」透露，他在嘉義共經營兩台夾娃娃機，每個月投入成本主要為租金及批貨費用，平均月收入約新台幣2萬5千元至3萬元，在扣除成本以後，淨賺近萬元，超乎自身期待。趙亮鈞也以他的友人為例，目前經營四個機台，每月都能穩定淨賺1萬7千元至1萬8千元。
+        </p>
+        <p>
+            「分租是近年才出現的新形態經營模式，也造就最近一年夾娃娃機店的快速擴張。」長期研究夾娃娃機產業生態的國立中正大學成人與繼續教育所學生趙亮鈞分析，因台灣近年經濟成長趨緩，導致許多人開始嘗試經營副業。而夾娃娃機台投資門檻較低，若以簽約半年為例，想當台主只需準備4萬到5萬即可，加上經營並不需長時間緊盯機台，使得各行各業，甚至連小學生都能擔任台主，夾娃娃機店因而引發熱潮。
+        </p>
+        <h2>投資第一步　台主報你知</h2>
+        <p>
+            投資夾娃娃機台的門檻雖然不高，但若要有良好的獲利，在經營地點與策略上仍需下足功夫。分析租金與人潮會帶來的成本與收益，從中找到平衡點才是獲益關鍵。
+        </p>
+        <figure class="float-right">
+            <img src="IMG_8923.jpg" alt="夾娃娃機" width="100%" />
+            <figcaption>台中一中街夾娃娃機台林立，吸引大量人潮，簡單趣味的遊戲方式，不分年齡都能輕鬆享受。 圖／陳棟攝</figcaption>
+        </figure>
+        <p>
+            地點遠近也會影響到補貨及處理突發狀況時，所需要投入的時間與人力成本。擔任台主多年的國立政治大學地政學系學生黃柏鈞便提到，曾有顧客凌晨三點來電，要求他立刻到店裡處理兌換獎品事宜，因該娃娃機店標榜24小時營業，所以只好半夜爬起來替顧客服務。
+        </p>
+        <p>
+            「雖然基本上都會有盈餘，但獲利情況還是看個人能力。」趙亮鈞強調，台主想要賺錢需要作出市場區隔，在成本上要捨得投資，包含擺放正版商品、要敢出貨、不要讓顧客都到保證取物時才夾得到，這樣顧客的回頭率才會高。
+        </p>
+        <p>
+            不過魏文彬指出，對比於場主擁有較固定的租金收入，僅需較小資本的台主，則相對有較高風險。他試算一個場主的獲利情形：選定地租每月三萬，購買30台新機台，加上裝潢15萬與7萬週轉金的條件下，若是滿租，投資100萬元，第五個月就可以開始淨賺。相對而言台主的收入則有諸多條件影響，如來客量、機台經營成本、出貨數量等種種因素。
+        </p>
+
+        <h2>師父領進門　好過一個人</h2>
+        <p>
+            若是新手台主的話，趙亮鈞建議可以拜資深台主為師，學習如何經營機台，藉此獲得穩定的收益。他解釋，因現今網路科技發達，資訊流通變得更為透明。以經營娃娃機為例，現代的師徒制不再像過往教導如何批貨、該怎麼購買零件、承租娃娃機等技術層面，而是轉以經營心得等較抽象的方面為主。
+        </p>
+        <p>
+            趙亮鈞會帶領徒弟從店面環境、出貨量、營業額等討論經營狀況，再一同思索經營理念。他說：「實行下來的成果，到客數從長期來看有逐漸成長。」
+        </p>
+        <p>
+            此外，教導內容也包含如何迅速處理各種狀況，該怎麼與客人應對進退。他分享，若是遇到機台故障，導致客人口氣不好時，必須先緩和客人情緒，透過承認錯誤來表達在乎客人感受，或是承諾補償來給予立即性回饋，最後才講解技術層面的解決辦法。如此一來，客人也比較願意再度消費，有助於提高顧客忠誠度。
+        </p>
+
+        <h2>慎選場主　互利共生</h2>
+        <p>
+            趙亮鈞分享，曾有菜鳥台主不諳經營之道，前腳才剛補完貨，就有老鳥後腳跟上清台，僅用少數的金錢就清空機台內的商品，導致最終以血本無歸收場。
+        </p>
+        <p>
+            為了避免上述狀況，「上上娃娃屋」的場主黃美惠說：「一個場大約會控制在4成新手，剩下的老手就會協助這些菜鳥，如果機台有吃錢等突發情況，也會互相幫忙。」她強調，不論場主與台主，或是台主之間都該是互利共生。好的場主會去關心台主有沒有賺錢，也會凝聚跟台主間的管理共識，比如嚴禁互打機台，不像有的場主只關心能否按時收到租金，自然難以永續經營。
+        </p>
+        <h2>投資夾娃娃　優勢與挑戰</h2>
+        <p>
+            相較於期貨或零股投資等小資投資，趙亮鈞認為，經營夾娃娃機的好處在於「立即獲利」。台主每天巡機台時便能知道今天賺了多少錢，而且獲利是能真切拿在手上感受的，投資也能帶來較豐富的娛樂性。夾娃娃機的另一優勢在於相對不受市場波動影響，個人有較高的能力掌握獲利情況。
+        </p>
+        <p>
+            然而現在不少夾娃娃機店為了降低成本，在機台放置仿冒品，甚至是將爪子、墊片調鬆，讓民眾無法順利夾取商品，甚至放置違法物品在裡頭蒙騙消費者，但現在僅能由警察取締，無法有效遏止類似情形發生。
+        </p>
+        <div class="embed-box" style="padding-bottom:48%">
+            <iframe frameborder="0" class="juxtapose" width="100%" height="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=4abe8a74-76c4-11e8-b263-0edaf8f81e27"></iframe>
+        </div>
+        <figcaption>娃娃盜版問題氾濫，不少知名卡通人都遭仿冒，更嚴重損害消費者權益。若是迪士尼原廠授權娃娃附有雷射標籤吊牌，精緻度相較盜版品高出許多。圖／陳棟攝</figcaption>
+        <p>
+            玩夾娃娃機資歷十年，消費者陳宗澧夾娃娃時便常常遇到這些情況。他提到，剛入門時常常遇到店家將爪子調鬆而多投錢卻敗興而歸。自從學到經驗後，陳宗澧建議若發現夾子或墊片有問題，就果斷放棄，轉而尋找下一台。他也曾遇過夾娃機台上寫了斗大的飛機杯（情趣用品）字眼，而這類屬於18禁的商品，他認為擺放在機台不妥。
+        </p>
+        <p>
+            日前警方於彰化取締違法機台，顧客以十元擲一次骰子方式來換取高達近兩千元物品，警察認定該機台對價懸殊又具機率性，而依《刑法》與《電子遊戲場業管理條例》取締。於銘傳大學桃園校區附近擔任台主的高智源提到，曾有台主在過年推出抽紅包活動，集滿點數即可兌換娃娃，成功吸引不少消費者。但現今台灣缺乏夾娃娃機專屬的管理條例，抽紅包等活動涉及得獎機率，他感嘆，因現行適用法規模糊，造成對「賭博」與否的定義仍不夠明朗，許多業者只好遊走於法律邊緣。
+        </p>
+        <figure>
+            <img src="IMG_8954.jpg" alt="彈跳台" width="100%" />
+            <figcaption>加裝彈力繩的「彈跳台」成為台主吸客噱頭，但業者任意更改機台，造成消費者在夾取時具有「射倖性」（意即以小錢僥倖取得高價商品），恐涉及違法。圖／陳棟攝</figcaption>
+        </figure>
+        <h2>管理夾娃娃　應對與應變</h2>
+        <p style="margin-top:30px">
+            公會無法取代警察職權取締違法業者，魏文彬表示，除了呼籲業者自律外，也希望政府提升執行力，最好能在盜版等違法物品的源頭進行取締。高智源認為，機台數量的成長速度遠超過警方能夠負荷的範圍，警察往往睜一隻眼閉一隻眼，「選擇性取締的方式如同看心情在抓違規。」
+        </p>
+        <blockquote>
+            「使用盜版娃娃並是不適合機台的長久經營方式，」高智源解釋，低成本的盜版商品多來自網購等管道，有別於台主從工廠批發，常伴隨品質參差的問題。盜版商品雖然可以在短期內有更多的獲利，但消費者回流率容易受商品品質影響，反而失去長期的客源及利潤，使得劣質盜版品被市場淘汰。
+        </blockquote>
+
+        <h2>今生這般　未來如何</h2>
+        <p>
+            談起現今夾娃娃機產業趨勢，魏文彬仍然樂觀看待。「產業過熱，不代表產業不能經營」，魏文彬認為夾娃娃機雖然趨於飽和，但仍具有相當競爭力，是適合各年齡層的體驗式經濟。他指出不少台中一中街的夾娃娃機店，以日系或高價精品等主題化區隔出不同市場，來應對目前擴張迅速而帶來的挑戰。
+        </p>
+        <p>
+            「政府應鼓勵產業創新，在適度情況下規範，而非一味限制。」魏文彬坦言，目前夾娃娃機市場快速擴張，全台早已超過8000個點位，但法律規範無法跟上產業創新，舊有的體制造成業者不便與限制。以機台審核為例，業者呼籲在機台上加裝LED跑馬燈等電子設備，可以讓消費者獲得更明確的商品資訊，並產生廣告收益，活絡市場發展。他無奈感嘆，現行法規下仍無法核准，政府消極對待民眾需求，防弊的心態遠大於興利。
+        </p>
+
+        <p>趙亮鈞分析，近期娃娃機店的擴張速度逐漸趨緩，加上租機台大致都簽約一年，今年暑假會是重要的時機點，可以觀察營業店數會不會快速消退。但他認為，夾娃娃機的娛樂性牽扯到人的慾望，不至於全面泡沫化，可是短視近利的場主經營模式可能會難以為繼。場主黃美惠也抱持類似的觀點，認為夾娃娃能滿足人類追求小確性的心態，加上現在社群網路發達，「夾友或台主都有互通訊息的社團，因此可以讓有心經營的店家被看見，劣質的被淘汰。」
+        </p>
+
+        <div class="related-text" style="clear:both;margin-top: 20px;">延伸閱讀</div>
+        <ul class="related-items">
+            <a href="http://www.unews.nccu.edu.tw/unews/%E8%B3%BD%E9%B4%BF/">
+                <li class="related-item">
+                    <img src="06.jpg"></img>
+                    <div>延伸閱讀一：在天空飛翔的鈔票　台灣賽鴿利益解密與合法化之路</div>
+                </li>
+            </a>
+            <a href="http://www.unews.nccu.edu.tw/unews/%E7%B4%85%E6%AF%AF%E5%89%8D%E7%9A%84%E5%B9%95%E5%BE%8C%E5%B7%A5%E4%BD%9C%E8%80%85%e3%80%80%E4%BF%83%E5%B9%B8%E7%A6%8F%E7%94%A2%E6%A5%AD%E5%86%8D%E5%8D%87%E7%B4%9A/">
+                <li class="related-item">
+                    <img src="05.jpg"></img>
+                    <div> 延伸閱讀二：紅毯前的幕後工作者　促幸福產業再升級</div>
+                </li>
+            </a>
+        </ul>
+
+    </article>
+    <footer>
+        <table class="shown-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="hidden-on-mobile">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">關於我們</div>
+                    </td>
+                    <td>
+                        <div class="footer-circle"></div>
+                        <div class="footer-text">聯絡我們</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </footer>
+</body>
+
+</html>
